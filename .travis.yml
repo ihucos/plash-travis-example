@@ -12,4 +12,5 @@ cache:
     - ~/plashdata/mydata.tar
 
 script:
+  - plash init
   - plash run --incude-string " $BUILD" -- printf 'heellow'
