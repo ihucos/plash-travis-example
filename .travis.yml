@@ -13,4 +13,4 @@ cache:
 
 script:
   - plash init
-  - plash run --incude-string " $BUILD" -- printf 'heellow'
+  - plash run --include-string " $BUILD" -- printf 'heellow'
