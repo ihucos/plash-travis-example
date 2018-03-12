@@ -1,7 +1,7 @@
 language: generic
 env:
   - BUILD='--alpine'
-  - BUILD='-f --ubuntu'
+  - BUILD='-f --ubuntu cowsay'
 
 install:
   - sudo apt-get install python3 python3-pip unionfs-fuse uidmap
