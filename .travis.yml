@@ -9,7 +9,7 @@ install:
 
 cache:
   directories:
-    - ~/plashdata/mydata.tar
+    - ~/.plashdata
 
 script:
   - plash init
