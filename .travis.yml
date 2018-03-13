@@ -22,7 +22,7 @@ script:
   # load the plash cache
   - plash sudo tar -xf ~/plashcache/data.tar -C / || plash init
 
-  - plash run --include-string " $BUILD" -- cat /etc/*-release
+  - plash run --include-string " $BUILD" --  sh -c 'cat /etc/*-release'
 
   # save the plash cache
   - plash sudo tar -cf ~/plashcache/data.tar ~/.plashdata
