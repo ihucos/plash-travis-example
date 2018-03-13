@@ -16,7 +16,7 @@ cache:
 script:
 
   # load the plash cache
-  - mkdir ~/plashcache/data.tar
+  - mkdir ~/plashcache
   - plash sudo tar -xvf ~/plashcache/data.tar -C /
   - plash init
 
