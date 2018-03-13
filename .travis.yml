@@ -1,7 +1,7 @@
 language: generic
 env:
   - BUILD='--alpine'
-  - BUILD='-f --ubuntu cowsay'
+  - BUILD='-f --ubuntu cowsay --bust-cache'
 
 install:
 
@@ -16,8 +16,7 @@ cache:
 script:
 
   # load the plash cache
-  - plash sudo tar -xf ~/plashcache/data.tar -C /
-  - plash init
+  - plash sudo tar -xf ~/plashcache/data.tar -C / || plash init
 
   - plash run --include-string " $BUILD" -- printf 'heellow'
 
