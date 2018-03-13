@@ -1,7 +1,11 @@
 language: generic
 env:
-  - BUILD='--alpine'
-  - BUILD='-f --ubuntu cowsay --bust-cache'
+  - BUILD='-i alpine'
+  - BUILD='-i ubuntu --apt cowsay'
+  - BUILD='-i centos'
+  - BUILD='-i fedora --run "touch a"'
+  - BUILD='-i debian'
+  - BUILD='-i opensuse'
 
 install:
 
@@ -18,7 +22,7 @@ script:
   # load the plash cache
   - plash sudo tar -xf ~/plashcache/data.tar -C / || plash init
 
-  - plash run --include-string " $BUILD" -- printf 'heellow'
+  - plash run --include-string " $BUILD" -- cat '/etc/*-release'
 
   # save the plash cache
   - plash sudo tar -cf ~/plashcache/data.tar ~/.plashdata
