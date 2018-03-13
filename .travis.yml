@@ -22,4 +22,4 @@ script:
   - plash run --include-string " $BUILD" -- printf 'heellow'
 
   # save the plash cache
-  - plash sudo tar -cf ~/plashcache/data.tar ~/.plashdata --sort=name 
+  - plash sudo tar --sort=name -cf ~/plashcache/data.tar ~/.plashdata
