@@ -16,9 +16,12 @@ cache:
 script:
 
   # load the plash cache
-  - plash sudo tar -xf ~/plashcache/data.tar -C / || plash init
+  - plash sudo tar -xvf ~/plashcache/data.tar -C /
+  - plash init
 
   - plash run --include-string " $BUILD" -- printf 'heellow'
 
+  - ls ~/plashcache/data.tar
+
   # save the plash cache
-  - plash sudo tar -cvf ~/plashcache/data.tar --sort=name ~/.plashdata
+  - plash sudo tar -cvf --sort=name ~/plashcache/data.tar ~/.plashdata
