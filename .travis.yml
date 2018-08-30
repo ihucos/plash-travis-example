@@ -3,7 +3,7 @@ env:
   - BUILD='--from alpine'
   - BUILD='--from ubuntu --apt cowsay'
   - BUILD='--from centos'
-  - BUILD='--from fedora --run "touch a"'
+  - BUILD='--from fedora --run "touch /a"'
   - BUILD='--from debian'
   - BUILD='--from opensuse'
 
@@ -22,7 +22,7 @@ script:
   # load the plash cache
   - plash sudo tar -xf ~/plashcache/data.tar -C / || plash init
 
-  - plash run $BUILD --  sh -c 'cat /etc/*-release'
+  - plash run --eval-string " $BUILD" --  sh -c 'cat /etc/*-release'
 
   # save the plash cache
   - plash sudo tar -cf ~/plashcache/data.tar ~/.plashdata
